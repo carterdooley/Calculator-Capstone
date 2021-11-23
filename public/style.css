@@ -1,0 +1,39 @@
+.calc {
+    background-color: rgb(80, 70, 70);
+    position: absolute;
+    left: 40%;
+    height: 40%;
+    width: 40%;
+    top: 20%;
+}
+
+.btn {
+    color: hotpink;
+    background-color: indigo;
+    /* margin-left: 4%; */
+    margin-top: 4%;
+    width: 70px;
+    height: 40px;
+}
+
+.buttons {
+    padding-top: 10%;
+    padding-left: 20%;
+    padding-bottom: 10%;
+}
+
+#input {
+    background-color: lightcoral;
+}
+
+#results {
+    background-color: indianred;
+}
+#int {
+    width: 97%;
+   position: absolute;
+   height: 10%;
+   background-color: green;
+   font: status-bar;
+   font-size: 26px;
+}

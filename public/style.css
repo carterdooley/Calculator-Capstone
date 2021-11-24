@@ -2,8 +2,8 @@
     background-color: rgb(80, 70, 70);
     position: absolute;
     left: 40%;
-    height: 40%;
-    width: 40%;
+    height: 400px;
+    width: 350PX;
     top: 20%;
 }
 
@@ -36,4 +36,5 @@
    background-color: green;
    font: status-bar;
    font-size: 26px;
+   text-align: center;
 }

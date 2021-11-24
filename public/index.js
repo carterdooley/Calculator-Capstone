@@ -1,7 +1,14 @@
-//Number Button Functionality
-
+//Common variables
 let input = document.getElementById('int')
+let eqList = document.getElementById('eqList')
+let listCont = null
 
+
+
+
+
+
+//Number Button Functionality
 const displayNum1 = () => {
     return input.value +=1
 }
@@ -45,6 +52,12 @@ const displaySymbolTimes = () => {
 const displaySymbolDivide = () => {
     return input.value += ' / '
 }
+const displaySymbolSR = () => {
+return input.value += ' √ '
+}
+const displaySymbolSq = () => {
+    return input.value += ' 2 '.sub
+}
 
 const clearCalc = () => {
     return input.value = ''
@@ -57,7 +70,11 @@ const equals = () => {
             let i = newCont.indexOf('+')
             let before = parseInt(newCont[i-1])
             let after = parseInt(newCont[i+1])
-            return input.value = before + after
+            let result = input.value = before + after
+            listCont = document.createElement('li')
+            listCont.textContent = `${result}`
+            eqList.append(listCont)
+            return result
         } else if(newCont.includes('-')){
             let i = newCont.indexOf('-')
             let before = parseInt(newCont[i-1])
@@ -68,12 +85,12 @@ const equals = () => {
             let before = parseInt(newCont[i-1])
             let after = parseInt(newCont[i+1])
             return input.value = before * after
-        }  else if(newCont.includes('/')){
+        } else if(newCont.includes('/')){
             let i = newCont.indexOf('/')
             let before = parseInt(newCont[i-1])
             let after = parseInt(newCont[i+1])
             return input.value = before/after
-        }
+        } else if (newCont.includes)
     }
 
 //Order of Operations
@@ -100,4 +117,6 @@ document.getElementById('-').addEventListener('click', displaySymbolMinus)
 document.getElementById('x').addEventListener('click', displaySymbolTimes)
 document.getElementById('/').addEventListener('click', displaySymbolDivide)
 document.getElementById('=').addEventListener('click', equals)
+document.getElementById('sR').addEventListener('click', displaySymbolSR)
+document.getElementById('sq').addEventListener('click', displaySymbolSq)
 document.getElementById('clear').addEventListener('click', clearCalc)

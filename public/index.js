@@ -53,10 +53,14 @@ const displaySymbolDivide = () => {
     return input.value += ' / '
 }
 const displaySymbolSR = () => {
-return input.value += ' √ '
+    let iV = input.value 
+    let SR = (' √ ')
+    return input.value = SR + iV
 }
 const displaySymbolSq = () => {
-    return input.value += ' 2 '.sub
+    let num2 = ' ^2 '
+    num2.sup()
+    return input.value += num2
 }
 
 const clearCalc = () => {
@@ -90,7 +94,15 @@ const equals = () => {
             let before = parseInt(newCont[i-1])
             let after = parseInt(newCont[i+1])
             return input.value = before/after
-        } else if (newCont.includes)
+        } else if(newCont.includes('√')){
+            let i = newCont.indexOf('√')
+            let after = parseInt(newCont[i+1])
+            return input.value = Math.sqrt(after)
+        } else if(newCont.includes('^2')){
+            let i = newCont.indexOf('^2')
+            let before = parseInt(newCont[i-1])
+            return input.value = before * before
+        }
     }
 
 //Order of Operations

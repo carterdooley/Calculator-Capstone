@@ -78,30 +78,50 @@ const equals = () => {
             listCont = document.createElement('li')
             listCont.textContent = `${result}`
             eqList.append(listCont)
-            return result
+            return input.value = result
         } else if(newCont.includes('-')){
             let i = newCont.indexOf('-')
             let before = parseInt(newCont[i-1])
             let after = parseInt(newCont[i+1])
-            return input.value = before - after
+            let result = before - after
+            listCont = document.createElement('li')
+            listCont.textContent = `${result}`
+            eqList.append(listCont)
+            return input.value = result
         } else if(newCont.includes('x')){
             let i = newCont.indexOf('x')
             let before = parseInt(newCont[i-1])
             let after = parseInt(newCont[i+1])
-            return input.value = before * after
+            let result =  before * after
+            listCont = document.createElement('li')
+            listCont.textContent = `${result}`
+            eqList.append(listCont)
+            return input.value = result
         } else if(newCont.includes('/')){
             let i = newCont.indexOf('/')
             let before = parseInt(newCont[i-1])
             let after = parseInt(newCont[i+1])
-            return input.value = before/after
+            let result = before/after
+            listCont = document.createElement('li')
+            listCont.textContent = `${result}`
+            eqList.append(listCont)
+            return input.value = result
         } else if(newCont.includes('√')){
             let i = newCont.indexOf('√')
             let after = parseInt(newCont[i+1])
-            return input.value = Math.sqrt(after)
+            let result =  Math.sqrt(after)
+            listCont = document.createElement('li')
+            listCont.textContent = `${result}`
+            eqList.append(listCont)
+            return input.value = result
         } else if(newCont.includes('^2')){
             let i = newCont.indexOf('^2')
             let before = parseInt(newCont[i-1])
-            return input.value = before * before
+            let result = before * before
+            listCont = document.createElement('li')
+            listCont.textContent = `${result}`
+            eqList.append(listCont)
+            return input.value = result
         }
     }
 

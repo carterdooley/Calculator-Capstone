@@ -28,6 +28,7 @@
 
 #results {
     background-color: indianred;
+    bottom: 300px;
 }
 #int {
     width: 97%;
@@ -37,4 +38,13 @@
    font: status-bar;
    font-size: 26px;
    text-align: center;
+}
+
+.crumb {
+	margin-right: 2em;
+	display: inline;
+}
+
+body {
+    background-color: rgb(27, 26, 26);
 }

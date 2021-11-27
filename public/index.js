@@ -1,4 +1,6 @@
-//Common variables
+//Calculator Page 
+    
+    //Common variables
 let input = document.getElementById('int')
 let eqList = document.getElementById('eqList')
 let listCont = null
@@ -8,7 +10,7 @@ let listCont = null
 
 
 
-//Number Button Functionality
+    //Number Button Functionality
 const displayNum1 = () => {
     return input.value +=1
 }
@@ -152,3 +154,5 @@ document.getElementById('=').addEventListener('click', equals)
 document.getElementById('sR').addEventListener('click', displaySymbolSR)
 document.getElementById('sq').addEventListener('click', displaySymbolSq)
 document.getElementById('clear').addEventListener('click', clearCalc)
+
+

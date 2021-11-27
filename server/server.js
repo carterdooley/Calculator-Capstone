@@ -29,6 +29,11 @@ app.get('/js', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.js'))
   })
 
+  app.get('/eq.js', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/equations.js'))
+  })
+
+
   
 
 app.listen(4000, () => console.log("Server running on 4000"));

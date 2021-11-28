@@ -6,6 +6,7 @@
     let c = document.getElementById('cin')
     let answer1 = document.getElementById('solin1')
     let answer2 = document.getElementById('solin2')
+    let a2 = document.getElementById('')
    
    
    
@@ -21,6 +22,14 @@
         answer2.value = resultN
    }
    
+   const solvedPyth = () => {
+       
+   }
+
+
+
+
        //Event Listeners
    
    document.getElementById('solve').addEventListener('click', solveQuad)
+   document.getElementById('solvep').addEventListener('click', solvedPyth)

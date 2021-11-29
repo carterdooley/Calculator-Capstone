@@ -1,8 +1,12 @@
 const express = require("express");
+require('dotenv').config()
 const cors = require("cors");
 const path = require('path')
 const app = express();
 app.use(cors())
+const {
+ getResources, createResources
+} = require('./controller.js')
 
 
 
@@ -33,7 +37,10 @@ app.get('/js', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/equations.js'))
   })
 
+//Database
+app.post('/seed', createResources)
 
+app.get('/resources', getResources)
   
 
 app.listen(4000, () => console.log("Server running on 4000"));

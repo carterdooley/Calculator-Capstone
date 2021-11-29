@@ -78,7 +78,7 @@ const equals = () => {
             let after = parseInt(newCont[i+1])
             let result = input.value = before + after
             listCont = document.createElement('li')
-            listCont.textContent = `${result}`
+            listCont.textContent = `${before} + ${after} = ${result}`
             eqList.append(listCont)
             return input.value = result
         } else if(newCont.includes('-')){
@@ -87,7 +87,7 @@ const equals = () => {
             let after = parseInt(newCont[i+1])
             let result = before - after
             listCont = document.createElement('li')
-            listCont.textContent = `${result}`
+            listCont.textContent = `${before} - ${after} = ${result}`
             eqList.append(listCont)
             return input.value = result
         } else if(newCont.includes('x')){
@@ -96,7 +96,7 @@ const equals = () => {
             let after = parseInt(newCont[i+1])
             let result =  before * after
             listCont = document.createElement('li')
-            listCont.textContent = `${result}`
+            listCont.textContent = `${before} * ${after} = ${result}`
             eqList.append(listCont)
             return input.value = result
         } else if(newCont.includes('/')){
@@ -105,7 +105,7 @@ const equals = () => {
             let after = parseInt(newCont[i+1])
             let result = before/after
             listCont = document.createElement('li')
-            listCont.textContent = `${result}`
+            listCont.textContent = `${before} / ${after} = ${result}`
             eqList.append(listCont)
             return input.value = result
         } else if(newCont.includes('√')){
@@ -113,7 +113,7 @@ const equals = () => {
             let after = parseInt(newCont[i+1])
             let result =  Math.sqrt(after)
             listCont = document.createElement('li')
-            listCont.textContent = `${result}`
+            listCont.textContent = `√${after} = ${result}`
             eqList.append(listCont)
             return input.value = result
         } else if(newCont.includes('^2')){
@@ -121,7 +121,7 @@ const equals = () => {
             let before = parseInt(newCont[i-1])
             let result = before * before
             listCont = document.createElement('li')
-            listCont.textContent = `${result}`
+            listCont.textContent = `${before}^2 = ${result}`
             eqList.append(listCont)
             return input.value = result
         }
@@ -150,7 +150,7 @@ document.getElementById('+').addEventListener('click', displaySymbolPlus)
 document.getElementById('-').addEventListener('click', displaySymbolMinus)
 document.getElementById('x').addEventListener('click', displaySymbolTimes)
 document.getElementById('/').addEventListener('click', displaySymbolDivide)
-document.getElementById('=').addEventListener('click', equals)
+document.getElementById('equ').addEventListener('click', equals)
 document.getElementById('sR').addEventListener('click', displaySymbolSR)
 document.getElementById('sq').addEventListener('click', displaySymbolSq)
 document.getElementById('clear').addEventListener('click', clearCalc)

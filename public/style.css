@@ -28,7 +28,8 @@
 
 #results {
     background-color: indianred;
-    bottom: 300px;
+    position: absolute;
+    top: 200px;
 }
 #int {
     width: 97%;
@@ -47,4 +48,8 @@
 
 body {
     background-color: rgb(27, 26, 26);
+}
+
+#equ {
+    background-color: rgb(158, 71, 71);
 }

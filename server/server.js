@@ -4,8 +4,9 @@ const cors = require("cors");
 const path = require('path')
 const app = express();
 app.use(cors())
+app.use(express.json())
 const {
- getResources, createResources, insertResources
+ getResources, createResources, insertResources, deleteUrl
 } = require('./controller.js')
 
 
@@ -47,11 +48,12 @@ app.get('/js', (req, res) => {
 
 
 //Database
-app.post('/seed', createResources)
+app.post('/api/seed', createResources)
 
-app.post('/insert', insertResources )
+app.post('/api/resources', insertResources)
 
-app.get('/resources', getResources)
+app.get('/api/resources', getResources)
+
+app.delete('/api/resources/:id', deleteUrl)
   
-
 app.listen(4000, () => console.log("Server running on 4000"));

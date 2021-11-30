@@ -1,20 +1,27 @@
-const { Axios } = require("axios")
-
 //Variables 
 const list = document.getElementById('urlList')
 const submit = document.getElementById('postUrl')
 const url = document.getElementById('url')
 
 //Functionality 
-axios.post('http://localhost:4000/seed')
+axios.post('/api/seed')
+
+
 
 const displayList = () => {
-    axios.get('http://localhost:4000/resources')
+    list.innerHTML = ''
+
+
+    axios.get('/api/resources')
     .then(res => {
         res.data.forEach(element => {
-           let urlList = document.createElement('li')
-           urlList.textContent = element
-           list.append(urlList)
+           let urlList = `<div class="url-list">
+               <h2><a>${element.link}</a></h2>
+               <button onclick="deleteUrl(${element.resource_id})">Delete</button>
+               </div>
+               `
+               console.log(`${element.resource_id}`)
+               list.innerHTML += urlList
         });
     })
 }
@@ -22,15 +29,17 @@ const displayList = () => {
 const insertIn = (x) => {
     x.preventDefault()
 
-    let body = {
-        name: url.value, 
+    let str = {
+        link: url.value, 
     }
+    console.log(str)
 
     if(url.value !== null){
-      axios.post('localhost:4000/insert', body)
-      .then(() => {
-          console.log('Url Posted!')
+      axios.post('/api/resources', str)
+      .then(res => {
+          console.log(res)
             displayList()
+            url.value = ''
       }) 
     }else {
         alert('Must enter a resource')
@@ -39,6 +48,11 @@ const insertIn = (x) => {
     
 }
 
+function deleteUrl(id) {
+    axios.delete(`/api/resources/${id}`)
+        .then(() => displayList())
+        .catch(err => console.log(err))
+}
 
 
 

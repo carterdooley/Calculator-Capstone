@@ -15,21 +15,38 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 
 module.exports = {
     createResources: (req, res) => {
-        sequelize.query(`CREATE TABLE resources
-        resource_id SERIAL PRIMARY KEY
-        url TEXT;`)
+        sequelize.query(`
+        drop table if exists resources;
+        
+        CREATE TABLE resources(
+        resource_id SERIAL PRIMARY KEY,
+        link VARCHAR 
+        );
+        `)
         .then(res.sendStatus(200))
+        .catch((err) => console.log(err))
     },
     insertResources: (req, res) => {
-        let {url} = req.body
-        sequelize.query(`INSERT INTO resources (url)
-        values ${url};
+        console.log(req.body)
+        let {link} = req.body
+        sequelize.query(`INSERT INTO resources (link)
+        values ('${link}');
         `)
          .then(dbRes => res.status(200).send(dbRes[0]))
+         .catch((err) => console.log(err))
         
     },
     getResources: (req, res) => {
         sequelize.query(`SELECT * FROM resources;`)
         .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch((err) => console.log(err))
+    },
+    deleteUrl: (req, res) => {
+        sequelize.query(`DELETE 
+        FROM resources
+        WHERE resource_id = ${req.params.id};
+        `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch((err) => console.log(err))
     }
 }

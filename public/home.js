@@ -34,7 +34,7 @@ const insertIn = (x) => {
     }
     console.log(str)
 
-    if(url.value !== null){
+    if(url.value !== ""){
       axios.post('/api/resources', str)
       .then(res => {
           console.log(res)

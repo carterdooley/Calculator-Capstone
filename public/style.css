@@ -1,5 +1,16 @@
+nav {
+    background-color: #c3073f;
+    height: 100px;
+    top: 0px;
+    text-align: center;
+}
+
+body {
+    background-color: #1A1A1D;
+}
+
 .calc {
-    background-color: rgb(80, 70, 70);
+    background-color:#4e4e50;
     position: absolute;
     left: 40%;
     height: 400px;
@@ -27,9 +38,10 @@
 }
 
 #results {
-    background-color: indianred;
+    background-color: #6f2232;
     position: absolute;
     top: 200px;
+    width: 200PX;
 }
 #int {
     width: 97%;
@@ -44,12 +56,30 @@
 .crumb {
 	margin-right: 2em;
 	display: inline;
+    font-size: larger;
 }
 
-body {
-    background-color: rgb(27, 26, 26);
-}
+
 
 #equ {
     background-color: rgb(158, 71, 71);
+}
+
+#result-head{
+    text-align: center;
+}
+
+.qe {
+    text-align: center;
+    background-color:#4e4e50 ;
+}
+
+.reso{
+    text-align: center;
+    background-color:#4e4e50 ;
+}
+
+.uList {
+    height: 300px;
+    background-color:#950740;
 }

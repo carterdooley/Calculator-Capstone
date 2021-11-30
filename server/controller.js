@@ -17,12 +17,16 @@ module.exports = {
     createResources: (req, res) => {
         sequelize.query(`CREATE TABLE resources
         resource_id SERIAL PRIMARY KEY
-        name TEXT;`)
+        url TEXT;`)
         .then(res.sendStatus(200))
     },
     insertResources: (req, res) => {
-        sequelize.query(`INSERT INTO resources (name)
+        let {url} = req.body
+        sequelize.query(`INSERT INTO resources (url)
+        values ${url};
         `)
+         .then(dbRes => res.status(200).send(dbRes[0]))
+        
     },
     getResources: (req, res) => {
         sequelize.query(`SELECT * FROM resources;`)

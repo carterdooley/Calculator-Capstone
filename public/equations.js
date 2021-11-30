@@ -22,9 +22,6 @@
         answer2.value = resultN
    }
    
-   const solvedPyth = () => {
-       
-   }
 
 
 
@@ -32,4 +29,4 @@
        //Event Listeners
    
    document.getElementById('solve').addEventListener('click', solveQuad)
-   document.getElementById('solvep').addEventListener('click', solvedPyth)
+   

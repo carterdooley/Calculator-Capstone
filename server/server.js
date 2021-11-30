@@ -5,7 +5,7 @@ const path = require('path')
 const app = express();
 app.use(cors())
 const {
- getResources, createResources
+ getResources, createResources, insertResources
 } = require('./controller.js')
 
 
@@ -37,8 +37,19 @@ app.get('/js', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/equations.js'))
   })
 
+  app.get('/hm.js', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/home.js'))
+  })
+
+  app.get('/ax.js', (req, res) => {
+    res.sendFile(path.join(__dirname, '../node_modules/axios/dist/axios.min.js'))
+  })
+
+
 //Database
 app.post('/seed', createResources)
+
+app.post('/insert', insertResources )
 
 app.get('/resources', getResources)
   

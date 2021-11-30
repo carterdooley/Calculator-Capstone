@@ -12,7 +12,7 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
         },
     },
 });
-
+//Need to Comment Out Seeding on Final version
 module.exports = {
     createResources: (req, res) => {
         sequelize.query(`

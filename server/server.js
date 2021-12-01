@@ -13,14 +13,13 @@ const {
 
 
 //Uploading Files to server
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'))
-})
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/home.html'))
 })
-
+app.get('/calculator', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
+})  
 app.get('/eq', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/equations.html'))
 })

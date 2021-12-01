@@ -22,8 +22,9 @@ const displayMusic = () => {
                <button onclick="deleteSong(${element.song_id})">Delete</button>
                </div>
                `
-               musList.innerHTML += musicList
+            musList.innerHTML += musicList  
         });
+         
     })
 }
 

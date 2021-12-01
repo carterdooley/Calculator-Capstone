@@ -6,7 +6,7 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 const {
- getResources, createResources, insertResources, deleteUrl
+ getResources, createResources, insertResources, deleteUrl, addSongs, getSongs, deleteSongs
 } = require('./controller.js')
 
 
@@ -51,9 +51,12 @@ app.get('/js', (req, res) => {
 app.post('/api/seed', createResources)
 
 app.post('/api/resources', insertResources)
+app.post('/api/songs', addSongs)
 
 app.get('/api/resources', getResources)
+app.get('/api/songs', getSongs)
 
 app.delete('/api/resources/:id', deleteUrl)
+app.delete('/api/songs/:id', deleteSongs)
   
 app.listen(4000, () => console.log("Server running on 4000"));

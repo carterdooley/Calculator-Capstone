@@ -17,15 +17,48 @@ module.exports = {
     createResources: (req, res) => {
         sequelize.query(`
         drop table if exists resources;
+        drop table if exists songs;
         
         CREATE TABLE resources(
         resource_id SERIAL PRIMARY KEY,
         link VARCHAR 
         );
+
+        CREATE TABLE songs(
+            song_id SERIAL PRIMARY KEY,
+            song_link VARCHAR
+        );
         `)
         .then(res.sendStatus(200))
         .catch((err) => console.log(err))
     },
+    //Songs
+    addSongs: (req, res) => {
+        console.log(req.body)
+        let {link2} = req.body
+        sequelize.query(`INSERT INTO songs (song_link)
+        values ('${link2}');
+        `)
+         .then(dbRes => res.status(200).send(dbRes[0]))
+         .catch((err) => console.log(err))
+        
+    },
+    getSongs: (req, res) => {
+        sequelize.query(`SELECT * FROM songs;`)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch((err) => console.log(err))
+    },
+    deleteSongs: (req, res) => {
+        sequelize.query(`DELETE 
+        FROM songs
+        WHERE song_id = ${req.params.id};
+        `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch((err) => console.log(err))
+    },
+
+
+    //Resources
     insertResources: (req, res) => {
         console.log(req.body)
         let {link} = req.body

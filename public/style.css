@@ -79,6 +79,11 @@ body {
     background-color:#4e4e50 ;
 }
 
+.play {
+    text-align: center;
+    background-color:#4e4e50 ;   
+}
+
 .uList {
     height: 300px;
     background-color:#950740;
